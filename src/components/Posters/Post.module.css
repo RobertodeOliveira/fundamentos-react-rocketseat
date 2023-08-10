@@ -1,0 +1,49 @@
+.post {
+  padding: 40px; 
+  background: var(--gray-800);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile{ 
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.name{ 
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.profission{
+  font-size: 0.875rem;
+  color: var(--gray-400);
+}
+
+.status {
+  font-size: 0.875rem;
+  color: var(--gray-400);
+}
+
+.avatar {
+  box-sizing: initial; /*Forma de resolver que a imagem não perca seu tamanho original por conta da borda e sim expanda*/ 
+  height: 3rem;
+  width: 3rem;
+  border-radius: 8px;
+  border: 4px solid var(--gray-800);
+  outline: 2px solid var(--green-500); 
+ }
+
+ /*----------------Main----------------*/
+
+ .content{
+    margin-top: 24px;
+ }
