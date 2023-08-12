@@ -1,3 +1,4 @@
+import { Comment } from '../Comment/Comment'
 import S from './Post.module.css'
 
 export function Post() {
@@ -16,15 +17,23 @@ export function Post() {
       <main className={S.content}>
         <p> Fala galeraa </p>
         <p> 👋 Acabei de subir mais um projeto no meu portifa. </p>
-       <p>  É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀 </p>
-        <p> 👉 jane.design/doctorcare #novoprojeto #nlw #rocketseat</p>
-        <p>
-          Christian Frontend Develop
-        </p>
+        <p>  É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀 </p>
+        <div className={S.author}>
+            <a className={S.anchor} href="https://github.com/RobertodeOliveira">👉 Jane.desing/doctorcare</a>
+          <p className={S.portfolio}>  
+            <a  className={S.anchor}href="">#novoprojeto</a>{' '} 
+            <a  className={S.anchor}href="">#nlw</a> {' '}
+            <a className={S.anchor} href="">#rocketseat</a> {' '}
+          </p>
+        </div>
+        <p></p>
       </main>
-      <footer>
-        
+      <footer >
+        <p className={S.mensagem}>Deixe seu Feedback</p>
+        <input className={S.input} type="text" placeholder='Nossa, adorei amigo!' />
       </footer>
+      <Comment />
+      <Comment />
     </article>
   )
 }
