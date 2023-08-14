@@ -1,8 +1,7 @@
 .comment {
   display: flex;
   margin-top: 32px;
-  gap: 16px;
-  /* padding: 1rem; */
+  gap: 1rem;
   flex-direction: column;
 }
 
@@ -49,10 +48,13 @@
   background: none;
   color: var(--gray-300);
   border: none;
+  height: 100%;
+  border-radius: 2px;
  }
 
  .commentBox button:hover {
   cursor: pointer;
+  color: var(--red-500);
  }
 
  .buttonInteractive button {
@@ -61,11 +63,20 @@
   border: none;
   display: flex;
   font-weight: 700;
-
   margin-top: 1.125rem;
-  gap: 10px;
  }
 
- .commentWrapper button:hover {
-  color: var(--green-500);
+ .buttonInteractive button svg {
+  margin-right: 10px;
  }
+
+ .buttonInteractive button span::before {
+  content: "\2022";
+  padding: 0 0.25rem;
+  
+ }
+
+ .buttonInteractive button:hover {
+  color: var(--green-300);
+ }
+

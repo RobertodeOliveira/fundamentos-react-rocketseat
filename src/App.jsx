@@ -7,10 +7,9 @@ import { Sidebar } from './components/Sidebar/Sidebar'
 function App() {
 
   return (
-    <>
     <div>
       <Header />
-      <div className={S.warppaer}>
+      <div className={S.wrapper}>
         <Sidebar />        
         <main>
           <Post />
@@ -18,7 +17,6 @@ function App() {
         </main>
       </div>
     </div>
-    </>
   )
 }
 

@@ -5,7 +5,6 @@ export function Header() {
   return (
     <div className={S.header}>
       <img src={igniteLogo} alt="Logo tipo do Ignite" />
-      {/* <strong>Ignite feed</strong> */}
     </div>
   );
 }
