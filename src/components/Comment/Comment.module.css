@@ -2,7 +2,7 @@
   display: flex;
   margin-top: 32px;
   gap: 1rem;
-  flex-direction: column;
+  /* flex-direction: column; */
 }
 
 .avatar {
@@ -29,6 +29,7 @@
  
 .commentMessage{
   color: var(--green-100);
+  width: 100%;
 }
  
 .author {
@@ -81,3 +82,6 @@
   color: var(--green-300);
  }
 
+.commentWrapper {
+  width: 100%;
+}
