@@ -25,7 +25,7 @@ export function Post({ author, publishedAt, content }) {
 
   const [comment, setComment] = useState([])
   const [newCommentText, setNewCommentText] = useState('')
-
+  console.log(newCommentText)
   // useEffect(() =>{ },[newCommentText])
 
   const handlNewComment = () => {
@@ -47,6 +47,12 @@ export function Post({ author, publishedAt, content }) {
     setComment(commentWithouDeleteOne)
   }
 
+  const handleNewCommentInvalid = () => {
+    console.log(event.target.setCustomValidity("Este campo é obrigatório"))
+  } 
+
+  const newCommentEmpity = newCommentText.length === 0
+
   return (
     <article className={S.post}>
       <header>
@@ -57,22 +63,33 @@ export function Post({ author, publishedAt, content }) {
             <span>{author.role}</span>
           </div>
         </div>
-        <time title={publishedDateFormatted} dateTime={publishedAt.toISOString()}>{publishedDateRelativeNow}</time>
+        <time title={publishedDateFormatted} dateTime={publishedAt.toISOString()}>
+          {publishedDateRelativeNow}
+        </time>
       </header>
       <div className={S.content}>
-      {content.map((line, index) => {
-        if(line.type === 'paragraph') {
-          return <p key={index}>{line.content}</p>
-        } else if (line.type === 'link') {
-          return  <p key={index}><a href="">{line.content}</a></p>
+        {content.map((line, index) => {
+          if(line.type === 'paragraph') {
+            return <p key={line.content}>{line.content}</p>
+          } else if (line.type === 'link') {
+            return  <p key={index}><a href="">{line.content}</a></p>
         }
       })}
       </div>
       <form onSubmit={handlNewComment} className={S.comentForm}>
         <strong>Deixe seu feedback</strong>
-        <textarea onChange={handleNewCommentText} value={newCommentText} name='input' placeholder='Deixe seu comentário' />
+        <textarea 
+          onChange={handleNewCommentText} 
+          value={newCommentText} 
+          name='input' 
+          placeholder='Deixe seu comentário' 
+          onInvalid={handleNewCommentInvalid}
+          required
+          />
         <footer>
-          <button type='submit'>Comentar</button>
+          <button type='submit' disabled={newCommentEmpity}> 
+            Publicar
+          </button>
         </footer>
       </form>
       <div>
@@ -80,7 +97,6 @@ export function Post({ author, publishedAt, content }) {
           return <Comment onDeleteComment={deleteComment} key={comment} content={comment} />
         })}
       </div>
-      
     </article>
   )
 }

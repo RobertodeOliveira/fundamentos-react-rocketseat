@@ -21,8 +21,8 @@ export const posts = [
       role: "Desenvolvedora Frontend"
     },
     content: [
-      {type: 'paragraph', content:'Fala galeraa' },
-      {type: 'paragraph', content:'É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀 ' },
+      {type: 'paragraph', content:'Fala galeraaaaaaaa' },
+      {type: 'paragraph', content:'É um projetoooooooo que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀 ' },
       {type: 'link', content:'Jane.desing/doctorcare' }
     ],
     publishedAt: new Date('2023-09-03 23:00')
